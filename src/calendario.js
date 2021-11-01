@@ -1,7 +1,7 @@
 let tarefas = [];
 
 
-onload = () => {
+// onload = () => {
 
     let date = new Date();
 
@@ -44,7 +44,7 @@ onload = () => {
         resetaTitulo();
     };
 
-};
+// };
 
 
 const mostraTarefas = () => {
