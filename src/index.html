@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Calendário Tarefado</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="./manifest.webmanifest" crossorigin="use-credentials"/>
+        <link rel="stylesheet" href="./calendario.css"/>
+        <script src="./calendario.js"></script>
+    </head>
+    <body>
+        <header class="headerBar primary">
+            <div class="appName">Calendário Tarefado</div>
+            <div class="badge warning">
+                <span id="estado">0</span>
+            </div>
+        </header>
+
+        <div id="tela1" class="component">
+            <div class="componentHeader center">
+               <!-- <h1 class="componentTitle">Minhas tarefas</h1> -->
+               <bottom id="hoje" class="button"></bottom>
+                
+            </div>
+            <div class="componentContent">
+                <div id="blank">
+                    <div class="center">
+                        <p>Sem tarefas por enquanto</p>
+                    </div>
+                </div>
+                <ul id="listaDeTarefas" class="list hidden"></ul>
+            </div>
+            <div class="componentFoot center">
+                <button id="btnAdic" class="button primary">
+                    <img src="./assets/plus1.png"/>
+                </button>
+            </div>
+
+        </div>
+        
+        <div id="tela2" class="component hidden">
+            <div class="componentHeader">
+                <h1 class="componentTitle">
+                    Nova tarefa
+                </h1>
+            </div>
+            <div class="componentContent">
+                <div class="field mt1">
+                    <label for="inputNovaTarefa">Tarefa:</label>
+                    <input id="inputNovaTarefa" type="text" autocomplete="off" />
+                </div>
+                <div class="field mt1">
+                    <label for="horas">Horas:</label>
+                    <input id="horas" type="text" autocomplete="off" />
+                </div>
+                <div class="field mt1">
+                    <label for="prazo">Prazo:</label>
+                    <input id="prazo" type="text" autocomplete="off" />
+                </div>
+                <div class="center mt1">
+                    <div style="display: block;">
+                        <div class="center">Disponibilidade</div>
+                        <div class="buttonGroup">
+                            <button class="button">
+                                D
+                            </button>
+                            <button class="button">
+                                S
+                            </button>
+                            <button class="button">
+                                T
+                            </button>
+                            <button class="button">
+                                Q
+                            </button>
+                            <button class="button">
+                                Q
+                            </button>
+                            <button class="button">
+                                S
+                            </button>
+                            <button class="button">
+                                S
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="buttonGroup mt1 center">
+                <button id="btnCanc1" class="button quarter secondary">Cancelar</button>
+                <button id="btnInc" class="button quarter primary" >Incluir</button>
+            </div>
+        </div>
+
+        <div id="tela3" class="component hidden">
+            <div class="componentHeader">
+                <h1 class="componentTitle" id="tarefaTiulo"></h1>
+            </div>
+            <div class="componentContent">
+                <!--<div class="field">
+                    <label for="inputExibeTarefa">Tarefa:</label>
+                    <input id="inputExibeTarefa" type="text" autocomplete="off" />
+                </div>-->
+
+                <div id="exibeTarefa" class="center">
+
+                </div>
+                
+                <div class="center">
+                    <p id="countdown">30:00</p>
+                </div>
+                
+
+            </div>
+            <div class="componentFoot center">
+                <button id="btnCanc2" class="button quarter secondary">Cancelar</button>
+                <button id="btnTempo" class="button primary" onclick="countdown()">
+                    <img src="./assets/plus1.png"/>
+                </button>
+            </div>
+        </div>
+
+        <div id="tela4" class="component hidden">
+            <div class="componentHeader">
+                <h1 class="componentTitle">Alteração de tarefa</h1>
+            </div>
+            <div class="componentContent">
+                <div class="field">
+                    <label for="inputAlteraTarefa">Tarefa:</label>
+                    <input id="inputAlteraTarefa" type="text" autocomplete="off" />
+                </div>
+                <div class="buttonGroup end mt1">
+                    <button id="btnCanc3" class="button quarter secondary">Cancelar</button>
+                    <button id="btnAlt" class="button quarter primary">Alterar</button>
+                </div>
+                <div class="buttonGroup end mt3">
+                    <button id="btnDel" class="button quarter danger">Apagar tarefa</button>
+                </div>
+            </div>
+        </div>
+        
+
+    </body>
+</html>
