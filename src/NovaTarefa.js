@@ -1,67 +1,63 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import './calendario.css'
 
 class NovaTarefa extends Component {
 
     render() {
-
-        let date = new Date();
-        let today = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-
-
         return (
             <div className="NovaTarefa">
-                <div id="tela2" class="component hidden">
-                    <div class="componentHeader">
-                        <h1 class="componentTitle">
+                <div id="tela2" className="component">
+                    <div className="componentHeader">
+                        <h1 className="componentTitle">
                             Nova tarefa
                         </h1>
                     </div>
-                    <div class="componentContent">
-                        <div class="field mt1">
-                            <label for="inputNovaTarefa">Tarefa:</label>
-                            <input id="inputNovaTarefa" type="text" autocomplete="off" />
+                    <div className="componentContent">
+                        <div className="field mt1">
+                            <label htmlFor="inputNovaTarefa">Tarefa:</label>
+                            <input id="inputNovaTarefa" type="text" autoComplete="off" />
                         </div>
-                        <div class="field mt1">
-                            <label for="horas">Horas:</label>
-                            <input id="horas" type="text" autocomplete="off" />
+                        <div className="field mt1">
+                            <label htmlFor="horas">Horas:</label>
+                            <input id="horas" type="text" autoComplete="off" />
                         </div>
-                        <div class="field mt1">
-                            <label for="prazo">Prazo:</label>
-                            <input id="prazo" type="text" autocomplete="off" />
+                        <div className="field mt1">
+                            <label htmlFor="prazo">Prazo:</label>
+                            <input id="prazo" type="text" autoComplete="off" />
                         </div>
-                        <div class="center mt1">
-                            <div style="display: block;">
-                                <div class="center">Disponibilidade</div>
-                                <div class="buttonGroup">
-                                    <button class="button">
+                        <div className="center mt1">
+                            <div style={{display: 'block'}}>
+                                <div className="center">Disponibilidade</div>
+                                <div className="buttonGroup">
+                                    <button className="button">
                                         D
                                     </button>
-                                    <button class="button">
+                                    <button className="button">
                                         S
                                     </button>
-                                    <button class="button">
+                                    <button className="button">
                                         T
                                     </button>
-                                    <button class="button">
+                                    <button className="button">
                                         Q
                                     </button>
-                                    <button class="button">
+                                    <button className="button">
                                         Q
                                     </button>
-                                    <button class="button">
+                                    <button className="button">
                                         S
                                     </button>
-                                    <button class="button">
+                                    <button className="button">
                                         S
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="buttonGroup mt1 center">
-                        <button id="btnCanc1" class="button quarter secondary">Cancelar</button>
-                        <button id="btnInc" class="button quarter primary">Incluir</button>
+                    <div className="buttonGroup mt1 center">
+                        <NavLink exact to="/" id="btnCanc1" className="button quarter secondary">Cancelar</NavLink>
+                        <NavLink exact to="/:dadosTarefa" id="btnInc" className="button quarter primary">Incluir</NavLink>
                     </div>
                 </div>
             </div>

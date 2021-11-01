@@ -1,32 +1,43 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import './calendario.css'
 
 class Dia extends Component {
+
+    componentDidMount() {
+
+      //  console.log(this.props.match.props);
+
+    }
+
 
     render() {
 
         let date = new Date();
         let today = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 
+        
+
 
         return (
             <div className="Dia">
-                <div id="tela1" class="component">
-                    <div class="componentHeader center">
-                        <button id="hoje" class="button">{today}</button>
+                <div id="tela1" className="component">
+                    <div className="componentHeader center">
+                        <button id="hoje" className="button">{today}</button>
                     </div>
-                    <div class="componentContent">
+                    <div className="componentContent">
                         <div id="blank">
-                            <div class="center">
+                            <div className="center">
                                 <p>Sem tarefas por enquanto</p>
                             </div>
                         </div>
-                        <ul id="listaDeTarefas" class="list hidden"></ul>
+                        <ul id="listaDeTarefas" className="list hidden"></ul>
                     </div>
-                    <div class="componentFoot center">
-                        <button id="btnAdic" class="button primary">
+                    <div className="componentFoot center">
+                        <NavLink exact to="/dadosTarefa" id="btnAdic" className="button primary">
                             <img src="./assets/plus1.png" />
-                        </button>
+                        </NavLink>
                     </div>
                 </div>
             </div>

@@ -6,9 +6,9 @@ class Cabecalho extends Component {
     render() {
         return (
             <div className="Cabecalho">
-                <header class="headerBar primary">
-                    <div class="appName">Calendário Tarefado</div>
-                    <div class="badge warning">
+                <header className="headerBar primary">
+                    <div className="appName">Calendário Tarefado</div>
+                    <div className="badge warning">
                         <span id="estado">0</span>
                     </div>
                 </header>
