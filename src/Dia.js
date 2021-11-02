@@ -1,23 +1,37 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { withRouter } from 'react-router';
 import './calendario.css'
 
 class Dia extends Component {
 
+    state = {
+        tarefa: { nome: '', horas: 0, prazo: new Date(), disponibilidade: [] }
+    };
+
     componentDidMount() {
 
-      //  console.log(this.props.match.props);
+        console.log(this.props)
+
+        const locationState = this.props.location.state;
+
+        if( locationState !== undefined && locationState !== null)
+        {
+            const {dados} = this.props.location.state;
+
+            if(dados.acao === "inserir") {
+                this.setState({ nome: dados.nome})
+            }
+
+        }
+
+        console.log(this.state);
 
     }
-
 
     render() {
 
         let date = new Date();
         let today = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-
-        
 
 
         return (
@@ -36,7 +50,7 @@ class Dia extends Component {
                     </div>
                     <div className="componentFoot center">
                         <NavLink exact to="/dadosTarefa" id="btnAdic" className="button primary">
-                            <img src="./assets/plus1.png" />
+                            <img src="./assets/plus1.png" alt="adicionar"/>
                         </NavLink>
                     </div>
                 </div>

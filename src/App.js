@@ -13,15 +13,8 @@ function App() {
       <Cabecalho />
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Dia />
-          </Route>
-          <Route path="/:dados">
-            <Dia />
-          </Route>
-          <Route path="/dadosTarefa">
-            <NovaTarefa />
-          </Route>
+          <Route exact path="/" component={Dia} />
+          <Route path="/dadosTarefa" component={NovaTarefa} />
         </Switch>
       </Router>
     </div>
